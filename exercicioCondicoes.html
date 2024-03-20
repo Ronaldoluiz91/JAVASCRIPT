@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampada Condição</title>
+</head>
+
+<body>
+    <img id="luz" src="img/apagada.jpg" onmouseout="mudarLampada(1)" onmouseenter="mudarLampada(2)"
+        onclick="mudarLampada(3)">;
+    <audio id="quebrando" src="audio/lampQuebrando.mp3"></audio>
+
+    <script>
+        var quebrada = false;
+        var lampQuebrando = document.getElementById('quebrando');
+
+        function mudarLampada(tipo) {
+            if (tipo == 1) {
+                arquivo = 'img/apagada.jpg'
+            }
+            if (tipo == 2) {
+                arquivo = 'img/luz.jpg'
+            }
+            if (tipo == 3) {
+                arquivo = 'img/quebrada.jpg'
+            }
+            if (!quebrada) {
+                document.getElementById('luz').src = arquivo
+                if (tipo == 3) {
+                    quebrada = true;
+                    lampQuebrando.play();
+
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
