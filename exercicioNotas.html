@@ -18,17 +18,18 @@
 
         .relatorio {
             display: flex;
-            gap: 41px;
+            gap: 34px;
         }
 
         .relatorio1 {
             display: flex;
-            gap: 25px;
+            gap: 50px;
+            background-color: green;
         }
 
         .relatorioGeral {
             background-color: rgba(128, 128, 128, 0.344);
-            width: 600px;
+            width: 900px;
         }
 
         .media1 {
@@ -38,6 +39,60 @@
             left: 63px;
             bottom: 68px;
         }
+
+        #notaForm{
+            display: flex;
+            height: 25px;
+            gap: 15px;
+        }
+        .relatorio {
+            border: solid gray 1px;
+        
+        }
+        #nomeRelatioro{
+            position:absolute;
+        }
+        #matRelatorio{
+        position: relative;
+        left: 64px;    
+        }
+        #serieRelatorio{
+            position: relative;
+            left: 44px;
+        }
+        #b1Relatorio{
+            position: relative;
+            left: 80px;
+        }
+        #b2Relatorio{
+            position: relative;
+            left: 111px;
+        }
+        #b3Relatorio{
+            position: relative;
+            left: 139px;
+        }
+        #b4Relatorio{
+            position: relative;
+            left: 164px;
+        }
+        #mediaRelatorio{
+            position: relative;
+            left: 191px;
+        }
+        #situacao{
+            position: relative;
+            left: 212px;
+        }
+        button{
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            box-shadow: black 1px 1px 5px;
+            width: 100px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 
@@ -56,37 +111,38 @@
             <option value="Portugues">Portugues</option>
             <option value="Matematica">Matematica</option>
             <option value="Geografia">Geografia</option>
+            <option value="História">História</option>
+            <option value="Ciencias">Ciencias</option>
+            <option value="Ed. Fisica">Ed. Fisica</option>
         </select>
     </div>
     <br>
     <br>
     <div class="bimestres">
         <form id="notaForm">
-            <label for="b1">bimestre1</label>
-            <input type="number" id="b1">
-
-
-            <label for="b2">bimestre2</label>
-            <input type="number" id="b2">
-
-
-            <label for="b3">bimestre3</label>
-            <input type="number" id="b3">
-
-
-            <label for="b4">bimestre4</label>
-            <input type="number" id="b4">
-
+            <div class="bim">
+                <label for="b1">bimestre1</label>
+                <input type="number" id="b1">
+            </div>
+            <div class="bim">
+                <label for="b2">bimestre2</label>
+                <input type="number" id="b2">
+            </div>
+            <div class="bim">
+                <label for="b3">bimestre3</label>
+                <input type="number" id="b3">
+            </div>
+            <div class="bim">
+                <label for="b4">bimestre4</label>
+                <input type="number" id="b4">
+            </div>
         </form>
         <div class="media1">
             <p>Média</p>
             <p id="media"></p>
         </div>
     </div>
-    <br>
-    <div>
-    </div>
-    <button onclick="salvar()" id="salva type="> Salvar </button>
+    <button onclick="calcular()" id="salva type="> Calcular </button>
     </div>
     <hr>
 
@@ -101,7 +157,6 @@
             <p>B3</p>
             <p>B4</p>
             <p>Média</p>
-
             <p>Situação</p>
         </div>
         <div class="relatorio">
@@ -117,7 +172,7 @@
         </div>
     </div>
     <script>
-        function salvar() {
+        function calcular() {
             var nomeCompleto = document.getElementById('nome');
             var serie = document.getElementById('serie');
             var materia = document.getElementById('materia');
@@ -136,8 +191,8 @@
             document.getElementById('b2Relatorio').innerHTML = b2;
             document.getElementById('b3Relatorio').innerHTML = b3;
             document.getElementById('b4Relatorio').innerHTML = b4;
-            document.getElementById('mediaRelatorio').innerHTML = media;
-            document.getElementById('media').innerHTML = media;
+            document.getElementById('mediaRelatorio').innerHTML = media.toFixed(2);
+            document.getElementById('media').innerHTML = media.toFixed(2);
             if (media >= 6) {
                 document.getElementById('situacao').innerHTML = 'Aprovado'
             }
