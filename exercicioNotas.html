@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio notas</title>
+    <style>
+        .cadastro {
+            display: flex;
+            gap: 7px;
+        }
+
+        .bimestres {
+            display: flex;
+            gap: 7px;
+        }
+
+        .relatorio {
+            display: flex;
+            gap: 41px;
+        }
+
+        .relatorio1 {
+            display: flex;
+            gap: 25px;
+        }
+
+        .relatorioGeral {
+            background-color: rgba(128, 128, 128, 0.344);
+            width: 600px;
+        }
+
+        .media1 {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            left: 63px;
+            bottom: 68px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cadastro de notas</h1>
+    <div class="cadastro">
+        <p>Nome Completo</p>
+        <input type="text" id="nome" name="nome">
+
+        <p>Série</p>
+        <input type="text" id="serie" name="serie">
+
+        <label for="materia">Matéria</label>
+        <select name="materia" id="materia">
+            <option value=""></option>
+            <option value="Portugues">Portugues</option>
+            <option value="Matematica">Matematica</option>
+            <option value="Geografia">Geografia</option>
+        </select>
+    </div>
+    <br>
+    <br>
+    <div class="bimestres">
+        <form id="notaForm">
+            <label for="b1">bimestre1</label>
+            <input type="number" id="b1">
+
+
+            <label for="b2">bimestre2</label>
+            <input type="number" id="b2">
+
+
+            <label for="b3">bimestre3</label>
+            <input type="number" id="b3">
+
+
+            <label for="b4">bimestre4</label>
+            <input type="number" id="b4">
+
+        </form>
+        <div class="media1">
+            <p>Média</p>
+            <p id="media"></p>
+        </div>
+    </div>
+    <br>
+    <div>
+    </div>
+    <button onclick="salvar()" id="salva type="> Salvar </button>
+    </div>
+    <hr>
+
+    <h1>Relatorio</h1>
+    <div class="relatorioGeral">
+        <div class="relatorio1">
+            <p>Nome Completo</p>
+            <p>Série</p>
+            <p>Matéria</p>
+            <p>B1</p>
+            <p>B2</p>
+            <p>B3</p>
+            <p>B4</p>
+            <p>Média</p>
+
+            <p>Situação</p>
+        </div>
+        <div class="relatorio">
+            <p id="nomeRelatorio"></p>
+            <p id="serieRelatorio"></p>
+            <p id="matRelatorio"></p>
+            <p id="b1Relatorio"></p>
+            <p id="b2Relatorio"></p>
+            <p id="b3Relatorio"></p>
+            <p id="b4Relatorio"></p>
+            <p id="mediaRelatorio"></p>
+            <p id="situacao"></p>
+        </div>
+    </div>
+    <script>
+        function salvar() {
+            var nomeCompleto = document.getElementById('nome');
+            var serie = document.getElementById('serie');
+            var materia = document.getElementById('materia');
+
+            var b1 = parseFloat(document.getElementById('b1').value);
+            var b2 = parseFloat(document.getElementById('b2').value);
+            var b3 = parseFloat(document.getElementById('b3').value);
+            var b4 = parseFloat(document.getElementById('b4').value);
+
+            var media = (b1 + b2 + b3 + b4) / 4;
+
+            document.getElementById('nomeRelatorio').innerHTML = nomeCompleto.value;
+            document.getElementById('serieRelatorio').innerHTML = serie.value;
+            document.getElementById('matRelatorio').innerHTML = materia.value;
+            document.getElementById('b1Relatorio').innerHTML = b1;
+            document.getElementById('b2Relatorio').innerHTML = b2;
+            document.getElementById('b3Relatorio').innerHTML = b3;
+            document.getElementById('b4Relatorio').innerHTML = b4;
+            document.getElementById('mediaRelatorio').innerHTML = media;
+            document.getElementById('media').innerHTML = media;
+            if (media >= 6) {
+                document.getElementById('situacao').innerHTML = 'Aprovado'
+            }
+            else if (media >= 5) {
+                document.getElementById('situacao').innerHTML = 'Recuperação'
+            }
+            else {
+                document.getElementById('situacao').innerHTML = 'reprovado'
+            }
+
+        } 
+    </script>
+</body>
+
+</html>
