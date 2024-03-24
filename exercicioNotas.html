@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio notas</title>
     <style>
-        .cadastro {
+        body {
+            background-color: rgba(128, 128, 128, 0.301)
+        }
+
+        form {
             display: flex;
-            gap: 7px;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        form>div {
+            display: flex;
+            flex-direction: column;
         }
 
         .bimestres {
@@ -16,150 +27,125 @@
             gap: 7px;
         }
 
-        .relatorio {
-            display: flex;
-            gap: 34px;
-        }
-
         .relatorio1 {
             display: flex;
-            gap: 50px;
-            background-color: green;
-        }
-
-        .relatorioGeral {
-            background-color: rgba(128, 128, 128, 0.344);
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: rgba(0, 128, 0, 0.297);
             width: 900px;
+            box-shadow: black 1px 1px 3px;
         }
-
-        .media1 {
+        .result {
             display: flex;
             flex-direction: column;
-            position: relative;
-            left: 63px;
-            bottom: 68px;
-        }
-
-        #notaForm{
-            display: flex;
-            height: 25px;
-            gap: 15px;
-        }
-        .relatorio {
-            border: solid gray 1px;
-        
-        }
-        #nomeRelatioro{
-            position:absolute;
-        }
-        #matRelatorio{
-        position: relative;
-        left: 64px;    
-        }
-        #serieRelatorio{
-            position: relative;
-            left: 44px;
-        }
-        #b1Relatorio{
-            position: relative;
-            left: 80px;
-        }
-        #b2Relatorio{
-            position: relative;
-            left: 111px;
-        }
-        #b3Relatorio{
-            position: relative;
-            left: 139px;
-        }
-        #b4Relatorio{
-            position: relative;
-            left: 164px;
-        }
-        #mediaRelatorio{
-            position: relative;
-            left: 191px;
-        }
-        #situacao{
-            position: relative;
-            left: 212px;
         }
         button{
             background-color: green;
-            color: white;
             border-radius: 5px;
-            box-shadow: black 1px 1px 5px;
-            width: 100px;
             cursor: pointer;
+            box-shadow: white 1px 1px 3px;
+            height: 30px;
+            width: 100px;
         }
-
+    
     </style>
 </head>
 
 <body>
     <h1>Cadastro de notas</h1>
-    <div class="cadastro">
-        <p>Nome Completo</p>
-        <input type="text" id="nome" name="nome">
 
-        <p>Série</p>
-        <input type="text" id="serie" name="serie">
-
-        <label for="materia">Matéria</label>
-        <select name="materia" id="materia">
-            <option value=""></option>
-            <option value="Portugues">Portugues</option>
-            <option value="Matematica">Matematica</option>
-            <option value="Geografia">Geografia</option>
-            <option value="História">História</option>
-            <option value="Ciencias">Ciencias</option>
-            <option value="Ed. Fisica">Ed. Fisica</option>
-        </select>
-    </div>
-    <br>
-    <br>
-    <div class="bimestres">
-        <form id="notaForm">
-            <div class="bim">
-                <label for="b1">bimestre1</label>
-                <input type="number" id="b1">
-            </div>
-            <div class="bim">
-                <label for="b2">bimestre2</label>
-                <input type="number" id="b2">
-            </div>
-            <div class="bim">
-                <label for="b3">bimestre3</label>
-                <input type="number" id="b3">
-            </div>
-            <div class="bim">
-                <label for="b4">bimestre4</label>
-                <input type="number" id="b4">
-            </div>
-        </form>
-        <div class="media1">
-            <p>Média</p>
-            <p id="media"></p>
+    <form class="cadastro">
+        <div>
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome">
         </div>
-    </div>
+        <div>
+            <label for="serie">Serie</label>
+            <input type="text" id="serie" name="serie">
+        </div>
+        <div>
+            <label for="materia">Matéria</label>
+            <select name="materia" id="materia">
+                <option value=""></option>
+                <option value="Portugues">Portugues</option>
+                <option value="Matematica">Matematica</option>
+                <option value="Geografia">Geografia</option>
+                <option value="História">História</option>
+                <option value="Ciencias">Ciencias</option>
+                <option value="Ed. Fisica">Ed. Fisica</option>
+            </select>
+        </div>
+    </form>
+    <br>
+
+    <form id="bimestres">
+        <div class="bim">
+            <label for="b1">bimestre1</label>
+            <input type="number" id="b1">
+        </div>
+        <div class="bim">
+            <label for="b2">bimestre2</label>
+            <input type="number" id="b2">
+        </div>
+        <div class="bim">
+            <label for="b3">bimestre3</label>
+            <input type="number" id="b3">
+        </div>
+        <div class="bim">
+            <label for="b4">bimestre4</label>
+            <input type="number" id="b4">
+        </div>
+        <div>
+            <div class="media1">
+                <p>Média</p>
+                <p id="media"></p>
+            </div>
+        </div>
+    </form>
+
     <button onclick="calcular()" id="salva type="> Calcular </button>
     </div>
     <hr>
 
     <h1>Relatorio</h1>
-    <div class="relatorioGeral">
-        <div class="relatorio1">
-            <p>Nome Completo</p>
-            <p>Série</p>
-            <p>Matéria</p>
-            <p>B1</p>
-            <p>B2</p>
-            <p>B3</p>
-            <p>B4</p>
-            <p>Média</p>
-            <p>Situação</p>
-        </div>
-        <div class="relatorio">
+        <div class="relatorio1 ">
+            <div class="result">
+                <p>Nome Completo</p>
+                <p id="nomeRelatorio"></p>
+            </div>
+            <div class="result">
+                <p>Série</p>
+                <p id="serieRelatorio"></p>
+            </div>
+            <div class="result">
+                <p>Matéria</p>
+                <p id="matRelatorio"></p>
+            </div>
+            <div class="result">
+                <p>B1</p>
+                <p id="b1Relatorio"></p>
+            </div>
+            <div class="result">
+                <p>B2</p>
+                <p id="b2Relatorio"></p>
+            </div>
+            <div class="result">
+                <p>B3</p>
+                <p id="b3Relatorio"></p>
+            </div>
+            <div class="result">
+                <p>B4</p>
+                <p id="b4Relatorio"></p>
+            </div>
+            <div class="result">
+                <p>Média</p>
+                <p id="mediaRelatorio"></p>
+            </div>
+            <div class="result">
+                <p>Situação</p>
+                <p id="situacao"></p>
+            </div>
+        <!-- <div class="relatorio2">
             <p id="nomeRelatorio"></p>
             <p id="serieRelatorio"></p>
             <p id="matRelatorio"></p>
@@ -169,7 +155,7 @@
             <p id="b4Relatorio"></p>
             <p id="mediaRelatorio"></p>
             <p id="situacao"></p>
-        </div>
+        </div>-->
     </div>
     <script>
         function calcular() {
