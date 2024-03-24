@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio notas</title>
+    <style>
+        body {
+            background-color: rgba(128, 128, 128, 0.301)
+        }
+
+        form {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        form>div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bimestres {
+            display: flex;
+            gap: 7px;
+        }
+
+        th {
+            padding: 10px 15px;
+            background-color: rgba(2, 184, 2, 0.573);
+        }
+
+        td {
+            padding: 10px 15px;
+        }
+
+
+        table {
+            background-color: rgba(0, 128, 0, 0.371);
+            margin: 0;
+            line-height: 15px;
+            text-align: center;
+        }
+        
+
+        button {
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: white 1px 1px 3px;
+            height: 30px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cadastro de notas</h1>
+
+    <form class="cadastro">
+        <div>
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome">
+        </div>
+        <div>
+            <label for="serie">Serie</label>
+            <input type="text" id="serie" name="serie">
+        </div>
+        <div>
+            <label for="materia">Matéria</label>
+            <select name="materia" id="materia">
+                <option value=""></option>
+                <option value="Portugues">Portugues</option>
+                <option value="Matematica">Matematica</option>
+                <option value="Geografia">Geografia</option>
+                <option value="História">História</option>
+                <option value="Ciencias">Ciencias</option>
+                <option value="Ed. Fisica">Ed. Fisica</option>
+            </select>
+        </div>
+    </form>
+    <br>
+
+    <form id="bimestres">
+        <div class="bim">
+            <label for="b1">bimestre1</label>
+            <input type="number" id="b1">
+        </div>
+        <div class="bim">
+            <label for="b2">bimestre2</label>
+            <input type="number" id="b2">
+        </div>
+        <div class="bim">
+            <label for="b3">bimestre3</label>
+            <input type="number" id="b3">
+        </div>
+        <div class="bim">
+            <label for="b4">bimestre4</label>
+            <input type="number" id="b4">
+        </div>
+        <div>
+            <div class="media1">
+                <p>Média</p>
+                <p id="media"></p>
+            </div>
+        </div>
+    </form>
+
+    <button onclick="calcular()" id="salva type="> Calcular </button>
+    </div>
+    <hr>
+
+    <h1>Relatorio</h1>
+    <table>
+
+        <tr>
+            <div>
+                <th>Nome Completo</th>
+                <th>Série</th>
+                <th>Matéria</th>
+                <th>B1</th>
+                <th>B2</th>
+                <th>B3</th>
+                <th>B4</th>
+                <th>Média</th>
+                <th>Situação</th>
+            </div>
+        </tr>
+
+        <tr>
+            <td id="nomeRelatorio"></td>
+            <td id="serieRelatorio"></td>
+            <td id="matRelatorio"></td>
+            <td id="b1Relatorio"></td>
+            <td id="b2Relatorio"></td>
+            <td id="b3Relatorio"></td>
+            <td id="b4Relatorio"></td>
+            <td id="mediaRelatorio"></td>
+            <td id="situacao"></td>
+
+        </tr>
+
+        <!-- <div class="relatorio2">
+            <p id="nomeRelatorio"></p>
+            <p id="serieRelatorio"></p>
+            <p id="matRelatorio"></p>
+            <p id="b1Relatorio"></p>
+            <p id="b2Relatorio"></p>
+            <p id="b3Relatorio"></p>
+            <p id="b4Relatorio"></p>
+            <p id="mediaRelatorio"></p>
+            <p id="situacao"></p>
+        </div>-->
+        </div>
+        <script>
+            function calcular() {
+                var nomeCompleto = document.getElementById('nome');
+                var serie = document.getElementById('serie');
+                var materia = document.getElementById('materia');
+
+                var b1 = parseFloat(document.getElementById('b1').value);
+                var b2 = parseFloat(document.getElementById('b2').value);
+                var b3 = parseFloat(document.getElementById('b3').value);
+                var b4 = parseFloat(document.getElementById('b4').value);
+
+                var media = (b1 + b2 + b3 + b4) / 4;
+
+                document.getElementById('nomeRelatorio').innerHTML = nomeCompleto.value;
+                document.getElementById('serieRelatorio').innerHTML = serie.value;
+                document.getElementById('matRelatorio').innerHTML = materia.value;
+                document.getElementById('b1Relatorio').innerHTML = b1;
+                document.getElementById('b2Relatorio').innerHTML = b2;
+                document.getElementById('b3Relatorio').innerHTML = b3;
+                document.getElementById('b4Relatorio').innerHTML = b4;
+                document.getElementById('mediaRelatorio').innerHTML = media.toFixed(2);
+                document.getElementById('media').innerHTML = media.toFixed(2);
+                if (media >= 6) {
+                    document.getElementById('situacao').innerHTML = 'Aprovado'
+                }
+                else if (media >= 5) {
+                    document.getElementById('situacao').innerHTML = 'Recuperação'
+                }
+                else {
+                    document.getElementById('situacao').innerHTML = 'reprovado'
+                }
+
+            } 
+        </script>
+</body>
+
+</html>
