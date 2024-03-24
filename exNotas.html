@@ -10,6 +10,17 @@
             background-color: rgba(128, 128, 128, 0.301)
         }
 
+        .cadastros {
+            box-shadow: gray 1px 1px 6px;
+            width: 900px;
+            align-content: center;
+        }
+
+        .relatorios {
+            box-shadow: gray 1px 1px 6px;
+            width: 900px;
+        }
+
         form {
             display: flex;
             justify-content: flex-start;
@@ -31,6 +42,7 @@
         th {
             padding: 10px 15px;
             background-color: rgba(2, 184, 2, 0.573);
+            color: white;
         }
 
         td {
@@ -44,7 +56,8 @@
             line-height: 15px;
             text-align: center;
         }
-        
+
+
 
         button {
             background-color: green;
@@ -55,10 +68,18 @@
             height: 30px;
             width: 100px;
         }
+
+        output {
+            background-color: white;
+            border: solid gray 1px;
+            height: 20px;
+            width: 150px;
+        }
     </style>
 </head>
 
 <body>
+
     <h1>Cadastro de notas</h1>
 
     <form class="cadastro">
@@ -87,36 +108,33 @@
 
     <form id="bimestres">
         <div class="bim">
-            <label for="b1">bimestre1</label>
-            <input type="number" id="b1">
+            <label for="b1">Bimestre 1</label>
+            <input type="text" id="b1">
         </div>
         <div class="bim">
-            <label for="b2">bimestre2</label>
-            <input type="number" id="b2">
+            <label for="b2">Bimestre 2</label>
+            <input type="text" id="b2">
         </div>
         <div class="bim">
-            <label for="b3">bimestre3</label>
-            <input type="number" id="b3">
+            <label for="b3">Bimestre 3</label>
+            <input type="text" id="b3">
         </div>
         <div class="bim">
-            <label for="b4">bimestre4</label>
-            <input type="number" id="b4">
+            <label for="b4">Bimestre 4</label>
+            <input type="text" id="b4">
         </div>
         <div>
-            <div class="media1">
-                <p>Média</p>
-                <p id="media"></p>
-            </div>
+            <label for="media">Média</label>
+            <output id="media1">
         </div>
     </form>
-
+    <br>
     <button onclick="calcular()" id="salva type="> Calcular </button>
-    </div>
+
     <hr>
 
     <h1>Relatorio</h1>
     <table>
-
         <tr>
             <div>
                 <th>Nome Completo</th>
@@ -130,7 +148,6 @@
                 <th>Situação</th>
             </div>
         </tr>
-
         <tr>
             <td id="nomeRelatorio"></td>
             <td id="serieRelatorio"></td>
@@ -141,21 +158,9 @@
             <td id="b4Relatorio"></td>
             <td id="mediaRelatorio"></td>
             <td id="situacao"></td>
-
         </tr>
 
-        <!-- <div class="relatorio2">
-            <p id="nomeRelatorio"></p>
-            <p id="serieRelatorio"></p>
-            <p id="matRelatorio"></p>
-            <p id="b1Relatorio"></p>
-            <p id="b2Relatorio"></p>
-            <p id="b3Relatorio"></p>
-            <p id="b4Relatorio"></p>
-            <p id="mediaRelatorio"></p>
-            <p id="situacao"></p>
-        </div>-->
-        </div>
+
         <script>
             function calcular() {
                 var nomeCompleto = document.getElementById('nome');
@@ -177,7 +182,7 @@
                 document.getElementById('b3Relatorio').innerHTML = b3;
                 document.getElementById('b4Relatorio').innerHTML = b4;
                 document.getElementById('mediaRelatorio').innerHTML = media.toFixed(2);
-                document.getElementById('media').innerHTML = media.toFixed(2);
+                document.getElementById('media1').innerHTML = media.toFixed(2);
                 if (media >= 6) {
                     document.getElementById('situacao').innerHTML = 'Aprovado'
                 }
@@ -190,6 +195,7 @@
 
             } 
         </script>
+
 </body>
 
 </html>
