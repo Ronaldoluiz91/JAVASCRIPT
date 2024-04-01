@@ -22,7 +22,7 @@
             box-shadow: gray 1px 1px 6px;
             width: 900px;
             align-content: center;
-            
+
         }
 
         .relatorios {
@@ -36,7 +36,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
-          
+
         }
 
         form>div {
@@ -95,14 +95,16 @@
             width: 100px;
             height: 20px;
         }
-        .cadastroGeral{
+
+        .cadastroGeral {
             box-shadow: black 1px 1px 5px;
-            
+
             padding: 10px 20px;
         }
-        .relatorioGeral{
+
+        .relatorioGeral {
             box-shadow: black 1px 1px 5px;
-            
+
             padding: 10px 20px;
         }
     </style>
@@ -164,14 +166,14 @@
         <button onclick="calcular()" id="salva"> Calcular </button>
     </div>
 
-<br>
-    
-<div class="relatorioGeral">
-    <h1>Relatorio</h1>
-    <table>
-        
-        <tr>
-            
+    <br>
+
+    <div class="relatorioGeral">
+        <h1>Relatorio</h1>
+        <table>
+
+            <tr>
+
                 <th>Nome Completo</th>
                 <th>Série</th>
                 <th>Matéria</th>
@@ -181,22 +183,22 @@
                 <th>B4</th>
                 <th>Média</th>
                 <th>Situação</th>
-            
-        </tr>
-        <tr>
-            <td id="nomeRelatorio"></td>
-            <td id="serieRelatorio"></td>
-            <td id="matRelatorio"></td>
-            <td id="b1Relatorio"></td>
-            <td id="b2Relatorio"></td>
-            <td id="b3Relatorio"></td>
-            <td id="b4Relatorio"></td>
-            <td id="mediaRelatorio"></td>
-            <td id="situacao"></td>
-        </tr>
-    </tbody>
-    </table>
-</div>
+
+            </tr>
+            <tr>
+                <td id="nomeRelatorio"></td>
+                <td id="serieRelatorio"></td>
+                <td id="matRelatorio"></td>
+                <td id="b1Relatorio"></td>
+                <td id="b2Relatorio"></td>
+                <td id="b3Relatorio"></td>
+                <td id="b4Relatorio"></td>
+                <td id="mediaRelatorio"></td>
+                <td id="situacao"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
     <script>
         //função para alterar a cor do tema da pagina
@@ -241,7 +243,8 @@
                 else {
                     document.getElementById('situacao').innerHTML = 'reprovado'
                 }
-            } else {
+            }
+            else {
                 alert('Preencha todos os campos')
             }
         }

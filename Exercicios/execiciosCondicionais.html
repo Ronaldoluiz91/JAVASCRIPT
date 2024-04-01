@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios Condicionais</title>
+</head>
+
+<body>
+
+    <script>
+        //Verifica se um numero é par ou impar
+        //    var numero = prompt('Digite um numero');
+
+        //     if (numero % 2 === 0){
+        //         console.log('Par')
+        //     }
+        //     else{
+        //         console.log('Impar');
+        //     }
+
+//---------------------------------------------------------------------------------------------------------
+
+        // Verificar e retornar se uma palavra é palindromo ou não.
+        /* 
+        O método split() divide uma String em uma lista ordenada de substrings, 
+           coloca essas substrings em um array e retorna o array. A divisão é feita 
+           procurando um padrão, onde o padrão é fornecido como o primeiro 
+           parâmetro na chamada do método. 
+           
+           O método reverse() inverte os itens de um array. O primeiro elemento do 
+           array se torna o último e o último torna-se o primeiro.
+        
+           O método join() junta todos os elementos de um array (ou um array-like object) 
+           em uma string e retorna esta string.
+        */
+
+        // var texto = prompt('Digite uma palavra para verificar se é palindromo');
+        // var reverso = texto.split('').reverse().join('')
+
+        // if (texto === reverso) {
+        //     console.log('A palavra ' + texto + ' é um palíndromo!');
+        // } else {
+        //     console.log('A palavra ' + texto + ' não é um palíndromo!');
+        // }
+
+        //------------------------------------------------------------------------------------------
+
+        //Calcular o fatorial de um numero
+
+        //  var fatorial = prompt('Digite um numero pra calcular seu fatorial');
+
+        // var numero = prompt('Digite um numero para calcular seu fatorial')
+
+        // function Fatorial(numero) {
+        //     if (numero == 0 || numero === 1) {
+        //         return 1;
+        //     } else {
+        //         return numero * Fatorial(numero - 1);
+        //     }
+        // }
+        // console.log("O fatorial de " + numero + " é: " + Fatorial(numero));
+
+//-------------------------------------------------------------------------------------------------------
+
+        // verificar o periodo do dia com base na hora (manhã, tarde, noite)
+
+        // var hora = parseFloat(prompt('Digite um horario'));
+        // if (hora >= 6 && hora < 12) {
+        //     console.log('Periodo da manhã');
+        // }
+        // else if (hora >= 12 && hora < 19) {
+        //     console.log('Periodo da tarde');
+        // }
+        // else if (hora >= 19 && hora < 24) {
+        //     console.log('Periodo da noite');
+        // }
+        // else{
+        //     console.log('Madrugada');
+        // }
+//--------------------------------------------------------------------------------------------------------------------
+
+
+
+        // classificar o grau de um estudante com base na nota (ex 90 pontos para quem tirou A, 80 pontos para quem tirou B, 70 pontos para quem tirou C)
+
+        // var nota = prompt('Digite a pontuação do estudante');
+        // if (nota >= 90){
+        //     console.log('Nota A');
+        // }
+        // else if ( nota >= 80){
+        //     console.log('Nota B');
+        // }
+        // else if (nota >= 70){
+        //     console.log('Nota C');
+        // }
+        // else if (nota >= 60){
+        //     console.log('D')
+        // }
+        // else{
+        //     console.log('Reprovado');
+        // }
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+        //Verificar a faixa etaria com base na idade (0 a 12 anos criança, 13 a 19 anos adolescente, 20 a 59 anos adulto e acimda de 60 anos idoso)
+
+        // var faixaEtaria = prompt('Digita a idade');
+        // if (faixaEtaria <= -1 || faixaEtaria == '') {
+        //     alert('Digite um idade valida');
+        // } else {
+        //     if (faixaEtaria >= 0 && faixaEtaria < 13) {
+        //         console.log('Criança');
+        //     }
+        //     else if (faixaEtaria >= 13 && faixaEtaria < 20) {
+        //         console.log('Adolescente');
+        //     }
+        //     else if (faixaEtaria >= 20 && faixaEtaria < 60) {
+        //         console.log('Adulto');
+        //     }
+        //     else {
+        //         console.log('Idoso');
+        //     }
+        // }
+
+//-------------------------------------------------------------------------------------------------------------------
+
+
+        // Verificar a categoria de um nadador com base na idade (infantil, juvenil, adulto)
+
+        // var idade = prompt('Digite a idade do nadador');
+        // if (idade != '') {
+        //     if (idade >= 3 && idade < 13) {
+        //         console.log('Categoria Infantil');
+        //     }
+        //     else if (idade >= 13 && idade < 20) {
+        //         console.log('Categoria Juvenil');
+        //     }
+        //     else {
+        //         console.log('Categoria Adulto');
+        //     }
+        // }
+        // else{
+        //     alert('Digite uma idade valida')
+        // }
+    </script>
+
+</body>
+
+</html>
