@@ -60,10 +60,10 @@ formFuncionario.addEventListener('submit', (event) => {
         cargoFunc.innerHTML = formFuncionario.cargo.value;
         dpFunc.innerHTML = formFuncionario.departamento.value;
         salarioFunc.innerHTML = `${(Number(formFuncionario.salario.value).toLocaleString('pt-br' , {style: 'currency' , currency: 'BRL'}))}`; 
-        inssFunc.innerHTML = 'R$ ' + inss.toFixed(2);
-        irpfFunc.innerHTML = 'R$ '+ irpf.toFixed(2);
-        vtFunc.innerHTML = 'R$ ' + vt.toFixed(2);
+        inssFunc.innerHTML = 'R$ ' + inss.toFixed(2).replace('.', ',');
+        irpfFunc.innerHTML = 'R$ '+ irpf.toFixed(2).replace('.', ',');
+        vtFunc.innerHTML = 'R$ ' + vt.toFixed(2).replace('.', ',');
         proventoFunc.innerHTML = `${(Number(formFuncionario.salario.value).toLocaleString('pt-br' , {style: 'currency' , currency: 'BRL'}))}`; 
-        liquidoFunc.innerHTML = 'R$ ' + liquido.toFixed(2);
+        liquidoFunc.innerHTML = 'R$ ' + liquido.toFixed(2).replace('.', ',');;
 
 })
